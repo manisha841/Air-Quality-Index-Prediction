@@ -32,8 +32,6 @@ def to_supervised(window_size,train):
 
 feature,label = to_supervised(window_size=5, train=scaled_dataset)
 
-feature.shape, label.shape
-
 n_train = 24*365
 X_train, X_test = feature[n_train:,] , feature[:n_train,]
 print('X_train' ,X_train.shape)
@@ -77,7 +75,7 @@ if isdir:
 else:
     model.fit(X_train, Y_train, validation_split = 0.1, epochs = 10, batch_size = 32, callbacks=[es_callback])
     model.save("air_pollution_forecasting_model")
-
+breakpoint()
 Y_pred = np.round(model.predict(X_test),2)
 
 from sklearn.metrics import mean_squared_error
