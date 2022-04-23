@@ -1,0 +1,6 @@
+version: "3.4"
+services:
+  aqi_pred_v1:
+    build: .
+    ports:
+      - 8501:8501
